@@ -33,7 +33,8 @@ def fake_detect():
 	print (request.data)
 	sent_tweet = str(request.data.decode('utf-8'))
 	print(len(sent_tweet))
-	if(len(sent_tweet) == 1888):
+	val = get_pred_fake(sent_tweet)
+	if(val):
 		return "Fake"
 	else:
 		return "True"
